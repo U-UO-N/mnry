@@ -70,4 +70,7 @@ export enum BusinessErrorCode {
   CATEGORY_HAS_PRODUCTS = 7002,
   CATEGORY_HAS_CHILDREN = 7003,
   CATEGORY_DELETE_FAILED = 7004,
+
+  // Address related 8xxx
+  ADDRESS_NOT_FOUND = 8001,
 }

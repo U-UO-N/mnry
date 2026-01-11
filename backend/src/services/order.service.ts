@@ -268,7 +268,10 @@ export class OrderService {
       addressSnapshot: {
         name: address.name,
         phone: address.phone,
-        address: `${address.province || ''}${address.city || ''}${address.district || ''}${address.detail || ''}`,
+        province: address.province || '',
+        city: address.city || '',
+        district: address.district || '',
+        address: address.detail || '',
       },
       couponId: data.couponId,
       pointsUsed,

@@ -82,7 +82,7 @@ export class GroupBuyService {
       productName: product?.name,
       productImage: product?.mainImage,
       productStock: product?.stock,
-      productDescription: product?.description,
+      productDescription: product?.description ?? undefined,
     };
   }
 
