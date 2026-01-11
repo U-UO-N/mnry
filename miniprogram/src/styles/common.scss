@@ -1,0 +1,161 @@
+// 全局通用样式
+page {
+  background-color: $bg-page;
+  font-size: $font-base;
+  color: $text-primary;
+  line-height: 1.5;
+}
+
+// 容器
+.container {
+  padding: $spacing-base;
+}
+
+.page-container {
+  min-height: 100vh;
+  background-color: $bg-page;
+}
+
+// 卡片
+.card {
+  background-color: $bg-white;
+  border-radius: $radius-md;
+  padding: $spacing-base;
+  margin-bottom: $spacing-base;
+  box-shadow: $shadow-sm;
+}
+
+// 按钮
+.btn {
+  @include flex-center;
+  height: 88rpx;
+  border-radius: $radius-round;
+  font-size: $font-base;
+  
+  &-primary {
+    @include btn-primary;
+  }
+  
+  &-outline {
+    @include btn-outline;
+  }
+  
+  &-disabled {
+    background-color: $text-disabled;
+    color: #ffffff;
+  }
+  
+  &-sm {
+    height: 64rpx;
+    font-size: $font-sm;
+    padding: 0 $spacing-md;
+  }
+  
+  &-lg {
+    height: 96rpx;
+    font-size: $font-md;
+  }
+}
+
+// 价格
+.price {
+  color: $primary-color;
+  font-weight: bold;
+  
+  &::before {
+    content: '¥';
+    font-size: 0.8em;
+  }
+  
+  &-original {
+    color: $text-placeholder;
+    text-decoration: line-through;
+    font-weight: normal;
+    font-size: $font-sm;
+    margin-left: $spacing-xs;
+  }
+}
+
+// 标签
+.tag {
+  display: inline-block;
+  padding: 4rpx 12rpx;
+  font-size: $font-xs;
+  border-radius: $radius-sm;
+  
+  &-primary {
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+  }
+  
+  &-success {
+    background-color: rgba($success-color, 0.1);
+    color: $success-color;
+  }
+  
+  &-warning {
+    background-color: rgba($warning-color, 0.1);
+    color: $warning-color;
+  }
+  
+  &-error {
+    background-color: rgba($error-color, 0.1);
+    color: $error-color;
+  }
+}
+
+// 空状态
+.empty {
+  @include flex(column, center, center);
+  padding: 100rpx 0;
+  
+  &-icon {
+    width: 200rpx;
+    height: 200rpx;
+    margin-bottom: $spacing-md;
+  }
+  
+  &-text {
+    color: $text-placeholder;
+    font-size: $font-base;
+    margin-bottom: $spacing-md;
+  }
+  
+  &-btn {
+    @include btn-primary;
+    padding: 0 $spacing-lg;
+    height: 72rpx;
+  }
+}
+
+// 分割线
+.divider {
+  height: 1rpx;
+  background-color: $border-color;
+  margin: $spacing-base 0;
+}
+
+// 列表项
+.list-item {
+  @include flex(row, space-between, center);
+  padding: $spacing-base;
+  background-color: $bg-white;
+  @include border-1px($border-color, bottom);
+  
+  &:last-child::after {
+    display: none;
+  }
+}
+
+// 加载更多
+.load-more {
+  @include flex-center;
+  padding: $spacing-md 0;
+  color: $text-placeholder;
+  font-size: $font-sm;
+}
+
+// 安全区域底部
+.safe-bottom {
+  @include safe-area-bottom;
+}

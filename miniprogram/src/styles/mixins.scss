@@ -1,0 +1,94 @@
+// Flexbox
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// 文字省略
+@mixin ellipsis($lines: 1) {
+  @if $lines == 1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  } @else {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+    overflow: hidden;
+  }
+}
+
+// 安全区域
+@mixin safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// 1px边框
+@mixin border-1px($color: $border-color, $direction: bottom) {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    @if $direction == bottom {
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 1px;
+    } @else if $direction == top {
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+    } @else if $direction == left {
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+    } @else if $direction == right {
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+    }
+    background-color: $color;
+    transform: scaleY(0.5);
+  }
+}
+
+// 按钮样式
+@mixin btn-primary {
+  background: linear-gradient(135deg, $primary-color, $primary-light);
+  color: #ffffff;
+  border: none;
+  border-radius: $radius-round;
+  font-size: $font-base;
+  &:active {
+    opacity: 0.8;
+  }
+}
+
+@mixin btn-outline {
+  background: transparent;
+  color: $primary-color;
+  border: 2rpx solid $primary-color;
+  border-radius: $radius-round;
+  font-size: $font-base;
+  &:active {
+    opacity: 0.8;
+  }
+}

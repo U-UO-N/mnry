@@ -1,0 +1,25 @@
+{
+  "name": "电商小程序",
+  "appid": "wxb11cb27144e6cfee",
+  "description": "综合性电商平台小程序",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "wxb11cb27144e6cfee",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "postcss": true,
+      "minified": true
+    },
+    "usingComponents": true,
+    "lazyCodeLoading": "requiredComponents"
+  },
+  "h5": {
+    "title": "电商小程序",
+    "router": {
+      "mode": "hash"
+    }
+  }
+}
