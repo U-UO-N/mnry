@@ -72,7 +72,9 @@ export function isValidPhone(phone: string): boolean {
 }
 
 // 静态资源基础URL
-const STATIC_BASE_URL = 'http://localhost:3001'
+// 开发环境: http://localhost:3001
+// 生产环境: https://mnry.asia
+const STATIC_BASE_URL = 'https://mnry.asia'
 
 // 获取图片完整URL
 export function getImageUrl(path: string): string {

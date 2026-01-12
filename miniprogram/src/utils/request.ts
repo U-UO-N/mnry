@@ -1,7 +1,9 @@
 import { useUserStore } from '@/stores/user'
 
-// API基础配置 - 开发环境使用本地地址
-const BASE_URL = 'http://localhost:3001/api'
+// API基础配置
+// 开发环境: http://localhost:3001/api
+// 生产环境: https://mnry.asia/api
+const BASE_URL = 'https://mnry.asia/api'
 
 // 请求配置接口
 interface RequestConfig {
