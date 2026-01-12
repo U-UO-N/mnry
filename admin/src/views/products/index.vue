@@ -182,11 +182,13 @@ const rules: FormRules = {
   mainImage: [{ required: true, message: '请上传主图', trigger: 'change' }]
 }
 
-// 获取完整图片URL
+// 获取完整图片URL（通过 Vite 代理访问）
 function getImageUrl(url: string): string {
   if (!url) return ''
   if (url.startsWith('http')) return url
-  return `http://localhost:3001${url}`
+  // 使用相对路径，通过 Vite 代理访问后端
+  if (url.startsWith('/uploads')) return url
+  return `/uploads/${url}`
 }
 
 const fetchProducts = async () => {
@@ -326,6 +328,8 @@ const handleDetailImageRemove = (file: UploadFile) => {
   let path = url
   if (url.startsWith('http://localhost:3001')) {
     path = url.replace('http://localhost:3001', '')
+  } else if (url.startsWith('/uploads')) {
+    path = url
   }
   
   // 尝试直接匹配

@@ -173,7 +173,9 @@ const handleStats = async (row: GroupBuyActivity) => {
 const getImageUrl = (url: string) => {
   if (!url) return ''
   if (url.startsWith('http')) return url
-  return `http://localhost:3001${url}`
+  // 使用相对路径，通过 Vite 代理访问后端
+  if (url.startsWith('/uploads')) return url
+  return `/uploads/${url}`
 }
 
 const getStatusType = (status: ActivityStatus) => {
